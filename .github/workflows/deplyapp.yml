@@ -31,7 +31,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t  carlos6019/devops-microservice:tagnam
+        docker build -t  carlos6019/devops-microservice:tagname
 
     - name: Push Docker image
       run: |
