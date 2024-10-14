@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devops
-        image: your-dockerhub-username/devops-microservice:latest
+        image: Carlos6019/devops-microservice:latest
         ports:
         - containerPort: 5000
 
