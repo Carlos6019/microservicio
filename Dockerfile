@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copiar los archivos de código
 RUN pip install flask
-COPY app.py app.py
+COPY microservice.py microservice.py 
 
 # Exponer el puerto
 EXPOSE 5000
