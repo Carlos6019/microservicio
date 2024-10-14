@@ -44,6 +44,6 @@ jobs:
       env:
         KUBECONFIG: ${{ secrets.KUBECONFIG }} # Almacena el contexto de EKS en los secretos
       run: |
-        kubectl apply -f /root/microservicio/app-deployment.yml
-        kubectl apply -f /root/microservicio/app-service.yml
+        kubectl apply -f ./app-deployment.yml
+        kubectl apply -f ./app-service.yml
 
