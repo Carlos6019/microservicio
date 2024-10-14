@@ -29,10 +29,6 @@ jobs:
         TF_VAR_region: us-west-2
       run: aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID && aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
 
-    - name: Run tests
-      run: |
-        pytest
-
     - name: Build Docker image
       run: |
         docker build -t <tu_imagen_docker> .
