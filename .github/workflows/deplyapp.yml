@@ -41,8 +41,10 @@ jobs:
         docker push carlos6019/devops-microservice:latest
 
     - name: Deploy to EKS
-      env:
-        KUBECONFIG: ${{ secrets.KUBECONFIG }} # Almacena el contexto de EKS en los secretos
+      run: |
+        aws eks update-kubeconfig --name terraform-eks --alias terraform
+
+    - name: Deploy to EKS
       run: |
         kubectl apply -f ./app-deployment.yml
         kubectl apply -f ./app-service.yml
