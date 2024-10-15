@@ -18,6 +18,13 @@ jobs:
        sudo apt-get update
        sudo apt-get install -y awscli
 
+
+    - name: Install kubectl
+      run: |
+        curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+        chmod +x ./kubectl
+        sudo mv ./kubectl /usr/local/bin/kubectl
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -47,7 +54,7 @@ jobs:
 
     - name: Deploy to EKS
       run: |
-        aws eks update-kubeconfig --name terraform-eks --alias terraform
+        aws eks update-kubeconfig --name terraform-eksi --debug --alias terraform
 
     - name: Deploy to EKS
       run: |
