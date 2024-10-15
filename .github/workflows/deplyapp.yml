@@ -18,7 +18,6 @@ jobs:
        sudo apt-get update
        sudo apt-get install -y awscli
 
-
     - name: Install kubectl
       run: |
         curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -32,7 +31,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install Flask
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        pytest  # Ejecuta las pruebas
 
     - name: Configure AWS credentials
       env:
