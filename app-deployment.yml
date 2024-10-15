@@ -18,4 +18,9 @@ spec:
         image: carlos6019/devops-microservice:latest
         ports:
         - containerPort: 5000
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
 
