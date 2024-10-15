@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: devops
-        image: Carlos6019/devops-microservice:latest
+        image: carlos6019/devops-microservice:latest
         ports:
         - containerPort: 5000
 
