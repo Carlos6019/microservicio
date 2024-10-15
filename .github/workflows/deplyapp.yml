@@ -54,7 +54,7 @@ jobs:
 
     - name: Deploy to EKS
       run: |
-        aws eks update-kubeconfig --name terraform-eksi --debug --alias terraform
+        aws eks update-kubeconfig --name terraform-eks --region us-east-1 --debug --alias terraform
 
     - name: Deploy to EKS
       run: |
